@@ -103,12 +103,26 @@ author_sub: 一句话介绍你自己
 
 ## 📤 发布到小红书
 
-优先**浏览器真人确认后发布**（最稳、最合规）。
-若需脚本/定时发布，可使用社区开源 Cookie 发布器（如上述搭档项目的 `publish_xhs.py`）：
+提供**内置半自动发布器** `scripts/publish_xhs.py`，合规优先设计——
+默认「仅自己可见」，公开前强制真人确认，**不做无人值守全自动**。
+
+```bash
+# 安装发布依赖
+pip install python-dotenv xhs
+
+# 配置 Cookie（复制后填写，.env 已被 .gitignore 忽略）
+cp env.example.txt .env
+
+# 1) dry-run 校验  2) 仅自己可见预览  3) --public 公开（会弹 7 项自查 + 真人键入确认）
+python scripts/publish_xhs.py -t "标题" -d "正文" -i cover.png card_1.png --dry-run
+python scripts/publish_xhs.py -t "标题" -d "正文" -i cover.png card_1.png
+python scripts/publish_xhs.py -t "标题" -d "正文" -i cover.png card_1.png --public
+```
 
 - Cookie 写入 `.env`，**切勿提交到 Git**（本仓库 `.gitignore` 已忽略）。
 - 默认「仅自己可见」预览，确认无误再 `--public`。
 - 频率克制、时间随机，详见合规模块。
+- 也可让 Agent 用浏览器真人确认后发布（无需 Cookie），二选一。
 
 ---
 
@@ -120,6 +134,7 @@ xhs-content-master/
 ├── README.md                # 项目文档（你现在看到的）
 ├── LICENSE                  # MIT
 ├── requirements.txt         # Python 依赖（PyYAML）
+├── env.example.txt          # Cookie 配置示例（复制为 .env）
 ├── .gitignore               # 已忽略 .env 等隐私文件
 ├── .claude-plugin/
 │   ├── plugin.json
@@ -132,7 +147,8 @@ xhs-content-master/
 │   ├── cover_template.html      # 参数化封面模板
 │   └── themes.json              # 主题配色
 ├── scripts/
-│   └── render_cover.py          # 钩子封面渲染器（HTML→PNG）
+│   ├── render_cover.py          # 钩子封面渲染器（HTML→PNG）
+│   └── publish_xhs.py           # 半自动发布器（合规优先·真人确认）
 ├── demos/                       # 示例封面与示例笔记
 │   ├── sample_blue.md / .png
 │   ├── sample_green.md / .png

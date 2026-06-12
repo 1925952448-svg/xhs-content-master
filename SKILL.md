@@ -80,8 +80,16 @@ python render_xhs.py content.md -t <theme> -m auto-split
 > ⚠️ 发布前**必过** `references/compliance-anti-ban.md` 红线检查。默认「仅自己可见」预览，确认无误再公开。
 
 两种发布通道，按场景选：
-- **浏览器手动/半自动**：在已登录小红书的浏览器中由真人确认后发布（最稳）。
-- **脚本发布（可选）**：用 Cookie 方式的开源发布器（如 Auto-Redbook-Skills 的 `publish_xhs.py`），支持 `--dry-run`、定时、默认仅自己可见。Cookie 写入 `.env`，切勿提交到 Git。
+- **浏览器手动/半自动**：在已登录小红书的浏览器中由真人确认后发布（最稳，无需 Cookie）。
+- **内置半自动发布器**：`scripts/publish_xhs.py`（合规优先设计）。
+  ```bash
+  # 1) dry-run 校验  2) 默认仅自己可见预览  3) --public 公开（会强制真人确认）
+  python scripts/publish_xhs.py -t "标题" -d "正文" -i cover.png card_1.png --dry-run
+  python scripts/publish_xhs.py -t "标题" -d "正文" -i cover.png card_1.png
+  python scripts/publish_xhs.py -t "标题" -d "正文" -i cover.png card_1.png --public
+  ```
+  - 默认「仅自己可见」；公开发布前**强制打印 7 项合规自查 + 要求真人键入确认**，不做无人值守全自动。
+  - Cookie 写入 `.env`（含 a1、web_session），已被 `.gitignore` 忽略，切勿提交。
 
 发布合规要点（强制）：单账号每天 ≤1-2 篇、不刷屏；发布时间**随机化**（非整点机器式）；不在凌晨集中批量定时；**禁止**同设备多账号矩阵群发。
 

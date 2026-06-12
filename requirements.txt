@@ -4,4 +4,9 @@
 PyYAML>=6.0
 
 # 渲染走系统已安装的 Chrome/Edge headless，无需 playwright。
-# 如需「多卡片正文图」与「Cookie 发布」，请另装搭档项目 Auto-Redbook-Skills 的依赖。
+
+# 半自动发布（scripts/publish_xhs.py）所需，可选安装：
+# python-dotenv>=1.0.0   # 读取 .env 里的 XHS_COOKIE
+# xhs>=0.4.0             # 小红书图文发布客户端
+#
+# 如需「多卡片正文图」，可另装搭档项目 Auto-Redbook-Skills 的依赖。
