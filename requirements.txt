@@ -1,0 +1,7 @@
+# 小红书内容运营大师 — Python 依赖
+
+# YAML 头部解析（封面渲染）
+PyYAML>=6.0
+
+# 渲染走系统已安装的 Chrome/Edge headless，无需 playwright。
+# 如需「多卡片正文图」与「Cookie 发布」，请另装搭档项目 Auto-Redbook-Skills 的依赖。

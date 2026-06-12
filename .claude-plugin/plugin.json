@@ -1,0 +1,19 @@
+{
+  "name": "xhs-content-master",
+  "description": "小红书内容运营全链路技能：账号定位、写笔记、生成『钩子封面』、合规自查、发布、复盘一条龙。内置防 AI 托管封号合规模块；封面按内容类型分主题配色（蓝/绿/红/白），HTML→PNG 渲染 1080×1440。",
+  "version": "1.0.0",
+  "category": "content",
+  "keywords": [
+    "xiaohongshu",
+    "小红书",
+    "redbook",
+    "social-media",
+    "content-creation",
+    "image-generation",
+    "compliance"
+  ],
+  "homepage": "https://github.com/1925952448-svg/xhs-content-master",
+  "author": {
+    "name": "1925952448-svg"
+  }
+}

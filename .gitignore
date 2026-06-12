@@ -1,0 +1,18 @@
+# 隐私与密钥 —— 切勿提交
+.env
+*.cookie
+cookie.txt
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 渲染输出（按需保留 demos/ 里的示例，忽略个人生成物）
+output/
+*.tmp.html
+
+# 系统
+.DS_Store
+Thumbs.db

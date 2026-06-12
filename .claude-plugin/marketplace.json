@@ -1,0 +1,24 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "xhs-content-master",
+  "owner": {
+    "name": "1925952448-svg"
+  },
+  "description": "小红书内容运营全链路技能：写笔记、做钩子封面、合规自查、发布、复盘",
+  "plugins": [
+    {
+      "name": "xhs-content-master",
+      "source": "./",
+      "description": "小红书内容运营大师。整合方法论+出图+发布+防封合规于一条工作流。",
+      "category": "content",
+      "keywords": [
+        "xiaohongshu",
+        "小红书",
+        "redbook",
+        "social-media",
+        "content-creation",
+        "compliance"
+      ]
+    }
+  ]
+}
